@@ -6,7 +6,7 @@ class rena {
 public:
     string nome;
     int peso, idade;
-    float altura;
+    double altura;
 
     rena(){
         this -> nome = "";
@@ -15,7 +15,7 @@ public:
         this -> altura = 0.0;
     }
 
-    rena(string nome, int peso, int idade, float altura){
+    rena(string nome, int peso, int idade, double altura){
         this -> nome = nome;
         this -> peso = peso;
         this -> idade = idade;
@@ -65,7 +65,7 @@ int main(){
         for (int j = 0; j < r; j++){
             string nome;
             int peso, idade;
-            float altura;
+            double altura;
 
             cin >> nome >> peso >> idade >> altura;
 
