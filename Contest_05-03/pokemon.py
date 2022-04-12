@@ -11,8 +11,8 @@ if len(pJ) != qP[1]:
     for i in range((qP[1] - len(pJ))):
         pJ.append(int(input()))
 
-pA.sort();
-pJ.sort();
+pA.sort()
+pJ.sort()
 
 feitos = []
 
