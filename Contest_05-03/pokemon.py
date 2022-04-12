@@ -1,15 +1,18 @@
 qP = list(map(int, input().split()))
-pA = sorted(list(map(int, input().split())))
+pA = list(map(int, input().split()))
 
 if len(pA) != qP[0]:
     for i in range((qP[0] - len(pA))):
         pA.append(int(input()))
 
-pJ = sorted(list(map(int, input().split())))
+pJ = list(map(int, input().split()))
 
 if len(pJ) != qP[1]:
     for i in range((qP[1] - len(pJ))):
         pJ.append(int(input()))
+
+pA.sort();
+pJ.sort();
 
 feitos = []
 
