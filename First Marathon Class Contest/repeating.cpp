@@ -29,7 +29,7 @@ int main(){
         }
     }
 
-    if (maior == -1){
+    if (maior < qnt){
         maior = qnt;
     }
 
