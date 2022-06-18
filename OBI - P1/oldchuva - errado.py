@@ -17,3 +17,5 @@ for i in range(2, n):
 
 # if (sum(x[i:]) == s):
 #         qnt += 1
+
+#geração de sub conjuntos, tem no maratona.oberlan.com
