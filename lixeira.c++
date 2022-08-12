@@ -2,71 +2,57 @@
 
 using namespace std;
 
-vector<long long> divisores(long long n) {
-    vector<long long> ans;
-    for(long long a = 1; a*a <= n; a++) {
-        if(n % a == 0) {
-            long long b = n / a;
-            ans.push_back(a);
-            if(a != b) ans.push_back(b);
-        }
-    }
-    sort(ans.begin(), ans.end());
-    return ans;
-}
+typedef long long ll;
 
-vector<long long> factor(long long n) {
-    vector<long long> ans;
-    for (long long i = 2; i * i <= n; i++) {
-        while (n % i == 0) {
-            ans.push_back(i);
-            n /= i;
-        }
-    }
-    if (n > 1) ans.push_back(n);
-    return ans;
-}
-
-
-vector<bool> crivo(long long n) {
-    vector<bool> primo(n+1, true);
-
-    primo[0] = primo[1] = false;
-    for (long long i = 2; i <= n; i++) {
-        if (primo[i] && i * i <= n) {
-            for (long long j = i * i; j <= n; j += i)
-                primo[j] = false;
-        }
-    }
-    return primo;
-}
+struct checkpoint {
+    ll x, y;
+    bool p;
+    ll pos;
+};
 
 int main(){
+    vector<checkpoint> priority;
 
-    long long n = 50;
-    vector<long long> divisores_n = divisores(n);
-    vector<long long> factor_n = factor(n);
+    priority.push_back({1, 2, true, 1});
+    priority.push_back({1, 3, false, 2});
 
-    for(long long i = 0; i < divisores_n.size(); i++) {
-        cout << divisores_n[i] << " ";
-    }
+    struct checkpoint poi;
+    poi.x = 9;
+    poi.y = 2;
+    poi.p = true;
+    poi.pos = 1;
 
-    cout << "\n";
+    cout << priority[0].pos << size(priority) << endl;
 
-    for(long long i = 0; i < factor_n.size(); i++) {
-        cout << factor_n[i] << " ";
-    }
+    priority.erase(find_if(priority.begin(), priority.end(), [&pos = poi.pos] (const checkpoint& cp) -> bool{
+        return cp.pos == pos;
+    }));
 
-    cout << "\n";
-
-    cout << __gcd(2, 6) << "\n"; // MDC
-    cout << (2*6)/__gcd(2, 6) << "\n"; // MMC
-
-    cout << 73 % 13 << "\n";
-    cout << 56/2 << "\n"; //Daqui para baixo estava testando n >>= 1; Isso é = /2;
-    cout << 28/2 << "\n";
-    cout << 14/2 << "\n";
-    cout << 7/2 << "\n";
-
-    return 0;
+    cout << priority[0].pos << size(priority) << endl;
 }
+
+/*
+
+                posPos = find_if(priority.begin(), priority.end(), [&posX = poi.x, &posY = poi.y] (const checkpoint& cp) -> bool{
+                    return (cp.x == posX) && (cp.y == posY);
+                });
+
+ */
+
+/* if (a.x == b.x){
+    if (a.y == b.y){
+        return !(a.fim);
+    }
+    return a.y > b.y;
+}
+return a.x < b.x; */
+
+/* sort(predios.begin(), predios.end(), [](checkpoint a, checkpoint b){ //para fim == 0 y maior; para fim == 1 y menor
+    if (a.x == b.x){
+        if (a.y == b.y){
+            return !(a.fim);
+        }
+        return a.y > b.y;
+    }
+    return a.x < b.x;
+}); */
