@@ -56,3 +56,34 @@ return a.x < b.x; */
     }
     return a.x < b.x;
 }); */
+
+
+    /* ll x = horC[1].horas - horC[0].horas, y = horC[3].horas - horC[2].horas;
+    if (x > 0 || y > 0){
+        ll z = abs(x - y)/2;
+        ll a = x > y ? x - z : y - z;
+        ll c = (x < 0 || y < 0) ? (z * -1) : z;
+
+        cout << x << "\n" << y << "\n";
+        cout << (a * 60) << " " << c << "\n";
+    }
+    else{
+        cout << x << "\n" << y << "\n" << x - y << "\n" << y-x << "\n";
+    } */
+
+    /* l1 = p/(comb/pow(k, 1));
+    l2 = p/(comb/pow(k, 2));
+
+    if (l2 >= k){
+        qnt = l2/k;
+        l2 -= k * qnt;
+    }
+
+    l3 = p/(comb/pow(k, 3));
+
+    if (l3 >= k){
+        qnt = l3/k;
+        l3 -= k * qnt;
+    }
+
+    cout << l1 << " " << l2 << " " << l3 << "\n"; */

@@ -12,7 +12,7 @@ for i in range(n, m+1, 1):
         num = num//10
         soma += numf
     soma += num
-    
+
     if (soma == s):
         lista.append(i)
 
