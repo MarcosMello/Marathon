@@ -1,6 +1,3 @@
-from audioop import reverse
-
-
 n = int(input())
 palavra = input()
 
